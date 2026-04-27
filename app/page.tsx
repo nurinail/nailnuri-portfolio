@@ -24,7 +24,7 @@ export default function Home() {
 				<CodeLinkItem title="CONTACT" item={contact} />
 				<CodeLinkItem title="SOCIAL" item={social} />
 				<Text w="full" py="20" color="#A0A0C0" textAlign="center">
-					© 2023 Nail Nuri. All rights reserved.
+					© 2026 Nail Nuri. All rights reserved.
 				</Text>
 			</VStack>
 		</>
