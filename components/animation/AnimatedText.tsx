@@ -9,7 +9,7 @@ export function AnimatedText() {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
 			style={{
-				fontSize: "34px",
+				fontSize: "30px",
 				fontWeight: 600,
 				textAlign: "center",
 			}}
@@ -44,7 +44,7 @@ export function AnimatedText() {
 					textShadow: "0 0 25px rgba(139,92,246,0.15)",
 				}}
 			>
-				Building interfaces that feel fast, smooth and alive.
+				I'am a frontend developer specializing in React and Next.js.
 			</motion.span>
 		</motion.h1>
 	);
