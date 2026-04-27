@@ -34,6 +34,8 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							key={index as number}
 							py="2xl"
 							px="3xl"
+							_focus={{ outline: "none", boxShadow: "none" }}
+							_focusVisible={{ outline: "none", boxShadow: "none" }}
 							w="full"
 							className="group"
 							role="group"
