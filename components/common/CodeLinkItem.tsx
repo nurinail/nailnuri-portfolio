@@ -31,6 +31,7 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 						<Link
 							href={link.href}
 							key={index as number}
+							transition="all 0.4s ease-in-out"
 							py="2xl"
 							px="3xl"
 							_focus={{ outline: "none", boxShadow: "none" }}
@@ -39,7 +40,7 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							className="group"
 							role="group"
 							border="1px solid"
-							_hover={{ textDecoration: "none" }}
+							_hover={{ textDecoration: "none", transform: "scale(1.05)" }}
 							borderColor={link.color}
 							justifyContent="space-between"
 						>
@@ -59,7 +60,7 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 								py="2px"
 								opacity="0"
 								transform="translateX(10px)"
-								transition="all 0.2s ease"
+								transition="all 0.4s ease-in-out"
 								_groupHover={{
 									opacity: 1,
 									transform: "translateX(0px)",
