@@ -1,4 +1,4 @@
-import { Text, VStack } from "@chakra-ui/react";
+import { Link, Text, VStack } from "@chakra-ui/react";
 import { AnimatedText } from "@/components/animation/AnimatedText";
 import { FloatingShapes } from "@/components/background/FloatingShapes";
 import { CodeLinkItem } from "@/components/common/CodeLinkItem";
@@ -23,6 +23,9 @@ export default function Home() {
 				<CodeLinkItem item={code} title="CODE" />
 				<CodeLinkItem title="CONTACT" item={contact} />
 				<CodeLinkItem title="SOCIAL" item={social} />
+				<Link href="/nailnuricv.pdf" target="_blank" rel="noopener noreferrer">
+					CV
+				</Link>
 				<Text w="full" py="20" color="#A0A0C0" textAlign="center">
 					© 2026 Nail Nuri. All rights reserved.
 				</Text>

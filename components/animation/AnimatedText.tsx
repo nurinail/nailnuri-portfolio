@@ -19,7 +19,7 @@ export function AnimatedText() {
 					backgroundPosition: ["0% 50%", "200% 50%"],
 				}}
 				transition={{
-					duration: 10, // 🔥 daha yavaş = daha premium
+					duration: 10,
 					ease: "linear",
 					repeat: Infinity,
 				}}

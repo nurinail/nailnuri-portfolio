@@ -4,6 +4,7 @@ import { FaDiscord, FaFacebook, FaYoutube } from "react-icons/fa6";
 import { GrGithub, GrInstagram } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
 import { SiHtmx } from "react-icons/si";
+import { TbFileCvFilled } from "react-icons/tb";
 
 export interface LinksType {
 	color: string;
@@ -43,6 +44,13 @@ export const contact: LinksType[] = [
 		title: "Email",
 		name: "nurinail2003@gmail.com",
 		href: "mailto:nurinail2003@gmail.com",
+	},
+	{
+		color: "#4F46E5",
+		icon: TbFileCvFilled,
+		title: "CV",
+		name: "@nailnuri",
+		href: "/nailnuricv.pdf",
 	},
 ];
 
