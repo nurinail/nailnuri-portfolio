@@ -1,4 +1,5 @@
 import { HStack, Link, Separator, Text, VStack } from "@chakra-ui/react";
+import NextLink from "next/link";
 import type { LinksType } from "../utils/utils";
 
 interface CodeLinkItemProps {
@@ -26,22 +27,48 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 			</HStack>
 
 			<VStack w="full">
-				{item?.map((link, index) => (
-					<Link
-						key={index as number}
-						gap="4"
-						py="2xl"
-						px="3xl"
-						w="full"
-						border="1px solid"
-						borderColor={link.color}
-					>
-						<link.icon size="24" color={link.color} />
-						<Text color="white" fontSize="text-md" fontWeight="bold">
-							{link.title}
-						</Text>
-					</Link>
-				))}
+				{item?.map((link, index) => {
+					return (
+						<Link
+							href={link.href}
+							key={index as number}
+							py="2xl"
+							px="3xl"
+							w="full"
+							className="group"
+							role="group"
+							border="1px solid"
+							_hover={{ textDecoration: "none" }}
+							borderColor={link.color}
+							justifyContent="space-between"
+						>
+							<HStack gap="4">
+								<link.icon size="24" color={link.color} />
+								<Text color="gray" fontSize="text-md" fontWeight="bold">
+									{link.title}
+								</Text>
+							</HStack>
+							<Text
+								color="grayLight.300"
+								border="1px solid"
+								borderColor="grayLight.500"
+								borderRadius="lg"
+								px="10px"
+								fontSize="text-xs"
+								py="2px"
+								opacity="0" // 🔥 əsas budur (default gizli)
+								transform="translateX(10px)"
+								transition="all 0.2s ease"
+								_groupHover={{
+									opacity: 1,
+									transform: "translateX(0px)",
+								}}
+							>
+								{link.name}
+							</Text>
+						</Link>
+					);
+				})}
 			</VStack>
 		</VStack>
 	);
