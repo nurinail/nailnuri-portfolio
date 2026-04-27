@@ -9,9 +9,9 @@ export default function Home() {
 		<VStack
 			maxW="sm"
 			mx="auto"
-			pt="9xl"
+			pt="10xl"
 			alignItems="center"
-			bg="transparent"
+			bg="#0d1219"
 			h="100dvh"
 		>
 			<TopUI />

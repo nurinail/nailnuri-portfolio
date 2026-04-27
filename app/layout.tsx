@@ -6,9 +6,9 @@ export const metadata: Metadata = {
 	title: "Nail Nuri",
 	description:
 		"Nail Nuri is a frontend developer specializing in React, Next.js, and TypeScript. Passionate about building scalable, high-performance, and user-centric web applications.",
-	// icons: {
-	// 	icon: "/images/logoBlack.png",
-	// },
+	icons: {
+		icon: "/logoBlack.png",
+	},
 	keywords: [
 		"frontend",
 		"developer",

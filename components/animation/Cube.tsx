@@ -43,7 +43,7 @@ export default function Cube() {
 					transform="rotateY(180deg) translateZ(100px)"
 				/>
 				<CubeSide
-					bg="linear-gradient(135deg, #43E97B, #38F9D7)"
+					bg="linear-gradient(135deg, #0093E9, #38F9D7)"
 					transform="rotateY(-90deg) translateZ(100px)"
 				/>
 				<CubeSide
@@ -72,9 +72,9 @@ function CubeSide({ bg, transform }: CubeSideProps) {
 			h="100%"
 			bg={bg}
 			opacity={0.6}
-			style={{ transform }}
+			style={{ transform, backfaceVisibility: "hidden", color: "white" }}
 		>
-			Salammm
+			{"Nail.dev"}
 		</Center>
 	);
 }
