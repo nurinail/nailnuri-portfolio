@@ -1,7 +1,58 @@
 {
-    "cSpell.words": [
-        "chakra",
-        "nuri",
-        "wdth"
-    ]
+	"biome.enabled": true,
+	"editor.accessibilitySupport": "on",
+	"editor.codeActionsOnSave": {
+		"source.action.useSortedKeys.biome": "always",
+		"source.biome": "always",
+		"source.fixAll.biome": "always",
+		"source.organizeImports.biome": "always",
+		"source.removeUnusedImports.biome": "always"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"eslint.enable": false,
+	"explorer.confirmDelete": false,
+	"files.autoSave": "off",
+	"files.exclude": {
+		".gitignore": true,
+		"AGENTS.md": true,
+		"CLAUDE.md": true,
+		"eslint.config.mjs": true,
+		"bun.lock": true,
+		"next-env.d.ts": true,
+		"next.config.ts": true,
+		"postcss.config.mjs": true,
+		"cspell.config.yml": true,
+		"dict.proj.txt": true
+		// "package.json": true,
+		// "README.md": true,
+		// "tsconfig.json": true,
+	},
+	// "files.watcherExclude": {},
+	"git.autofetch": true,
+	"github.copilot.chat.codeGeneration.useInstructionFiles": true,
+	"github.copilot.chat.agent.autoFix": true,
+	"github.copilot.chat.codesearch.enabled": true,
+	"github.copilot.chat.editor.temporalContext.enabled": true,
+	"github.copilot.chat.newWorkspace.useContext7": true,
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		{
+			"text": "Use conventional commit message format."
+		}
+	],
+	"javascript.preferences.quoteStyle": "single",
+	"prettier.enable": false,
+	"redhat.telemetry.enabled": true,
+	"search.exclude": {
+		"**/.vscode/": true,
+		"**/.github/": true,
+		"node_modules": true
+	},
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.preferences.quoteStyle": "single",
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.editor.wrapTabs": true,
+	"cSpell.words": ["chakra"]
 }
