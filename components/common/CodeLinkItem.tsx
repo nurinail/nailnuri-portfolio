@@ -8,7 +8,7 @@ interface CodeLinkItemProps {
 
 export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 	return (
-		<VStack gap="4" w="full" mt="12">
+		<VStack gap="4" w="full" mt="10">
 			<HStack w="full" align="center" gap="4">
 				<Separator flex="1" borderColor="whiteAlpha.300" />
 
