@@ -1,5 +1,4 @@
 import { HStack, Link, Separator, Text, VStack } from "@chakra-ui/react";
-import NextLink from "next/link";
 import type { LinksType } from "../utils/utils";
 
 interface CodeLinkItemProps {
@@ -58,7 +57,7 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 								px="10px"
 								fontSize="text-xs"
 								py="2px"
-								opacity="0" // 🔥 əsas budur (default gizli)
+								opacity="0"
 								transform="translateX(10px)"
 								transition="all 0.2s ease"
 								_groupHover={{

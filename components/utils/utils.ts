@@ -17,7 +17,7 @@ export const code: LinksType[] = [
 	{
 		color: "#F97315",
 		icon: GrGithub,
-		title: "Github",
+		title: "GitHub",
 		name: "@nurinail",
 		href: "https://github.com/nurinail",
 	},
@@ -25,7 +25,7 @@ export const code: LinksType[] = [
 		color: "#8B5CF6",
 		icon: SiHtmx,
 		title: "Web Projects",
-		name: "-->",
+		name: "->",
 	},
 ];
 
@@ -64,7 +64,7 @@ export const social: LinksType[] = [
 	{
 		color: "#FF0000",
 		icon: FaYoutube,
-		title: "Youtube",
+		title: "YouTube",
 		name: "@megavistaworld",
 		href: "https://www.youtube.com/@megavistaworld",
 	},
