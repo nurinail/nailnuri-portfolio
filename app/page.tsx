@@ -17,7 +17,6 @@ export default function Home() {
 				alignItems="center"
 				bg="#0d1219"
 				h="100dvh"
-				// position="relative"
 			>
 				<TopUI />
 				<AnimatedText />
