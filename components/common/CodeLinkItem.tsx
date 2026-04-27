@@ -33,6 +33,7 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							key={index as number}
 							transition="all 0.4s ease-in-out"
 							py="2xl"
+							target="_blank"
 							px="3xl"
 							_focus={{ outline: "none", boxShadow: "none" }}
 							_focusVisible={{ outline: "none", boxShadow: "none" }}

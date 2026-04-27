@@ -42,7 +42,7 @@ export const contact: LinksType[] = [
 		icon: MdEmail,
 		title: "Email",
 		name: "nurinail2003@gmail.com",
-		href: "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNtfCkxGWjQsMzPDnCpSPThTbrFRZdXPlDTlQBqRWwlgldsXfWTLFNqKFcgtqlzKjBzMpg",
+		href: "mailto:nurinail2003@gmail.com",
 	},
 ];
 
