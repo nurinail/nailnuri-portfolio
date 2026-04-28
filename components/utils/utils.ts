@@ -100,7 +100,7 @@ export const projects = [
 	},
 	{
 		title: "Weather Forecast App",
-		description: "App for checking real-time weather by location.",
+		description: "Simple weather app designed for desktop screens.",
 		color: "#38BDF8",
 		name: "weather",
 		href: "https://weatherappproje.netlify.app/",
@@ -118,7 +118,7 @@ export const projects = [
 	},
 	{
 		title: "Car Rental Website",
-		description: "Modern car rental website with responsive design.",
+		description: "Desktop-focused car rental website with modern UI.",
 		color: "#34D399",
 		name: "rent",
 		href: "https://brandbestcar.netlify.app/",
