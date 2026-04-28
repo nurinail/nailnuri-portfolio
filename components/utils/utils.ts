@@ -89,6 +89,16 @@ export const projects = [
 		icon: "system",
 	},
 	{
+		title: "Age Calculator",
+		description:
+			"Clean and minimal app to calculate age in years, months, and days.",
+		color: "#8B5CF6",
+		name: "age",
+		href: "https://agecalculatorff.netlify.app/",
+		bgColor: "rgba(139, 92, 246, 0.12)",
+		icon: "age",
+	},
+	{
 		title: "Interactive Quiz Platform",
 		description:
 			"Quiz app with real-time scoring and category-based questions.",

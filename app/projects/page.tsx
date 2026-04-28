@@ -1,7 +1,13 @@
 "use client";
 import { HStack, Link, Text, VStack } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { FiAlertCircle, FiCloud, FiHelpCircle, FiLayers } from "react-icons/fi";
+import {
+	FiAlertCircle,
+	FiCalendar,
+	FiCloud,
+	FiHelpCircle,
+	FiLayers,
+} from "react-icons/fi";
 import { IoCarSport } from "react-icons/io5";
 import { projects } from "@/components/utils/utils";
 
@@ -10,6 +16,7 @@ const iconMap = {
 	quiz: FiHelpCircle,
 	weather: FiCloud,
 	report: FiAlertCircle,
+	age: FiCalendar,
 	rent: IoCarSport,
 };
 
