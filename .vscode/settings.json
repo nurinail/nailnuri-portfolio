@@ -54,5 +54,14 @@
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.editor.wrapTabs": true,
-	"cSpell.words": ["chakra"]
+	"cSpell.words": [
+		"chakra",
+		"htmx",
+		"megavistaworld",
+		"nailnuri",
+		"nailnuricv",
+		"nnuri",
+		"nuri",
+		"nurinail"
+	]
 }

@@ -1,5 +1,26 @@
+"use client";
+
 import { HStack, Link, Separator, Text, VStack } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { FaFacebook, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa6";
+import { GrGithub, GrInstagram } from "react-icons/gr";
+import { MdEmail } from "react-icons/md";
+import { SiHtmx } from "react-icons/si";
+import { TbFileCvFilled } from "react-icons/tb";
 import type { LinksType } from "../utils/utils";
+
+const iconMap = {
+	github: GrGithub,
+	instagram: GrInstagram,
+	linkedin: FaLinkedinIn,
+	facebook: FaFacebook,
+	youtube: FaYoutube,
+	discord: FaDiscord,
+	email: MdEmail,
+	htmx: SiHtmx,
+	cv: TbFileCvFilled,
+};
 
 interface CodeLinkItemProps {
 	title: string;
@@ -27,30 +48,39 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 
 			<VStack w="full">
 				{item?.map((link, index) => {
+					const Icon = iconMap[link.icon as keyof typeof iconMap] ?? GrGithub;
+
 					return (
 						<Link
-							href={link.href}
+							as={NextLink}
+							href={link.href ?? "#"}
 							key={index as number}
 							transition="all 0.4s ease-in-out"
 							py="2xl"
-							target="_blank"
 							px="3xl"
-							_focus={{ outline: "none", boxShadow: "none" }}
-							_focusVisible={{ outline: "none", boxShadow: "none" }}
 							w="full"
 							className="group"
 							role="group"
 							border="1px solid"
-							_hover={{ textDecoration: "none", transform: "scale(1.05)" }}
 							borderColor={link.color}
 							justifyContent="space-between"
+							_hover={{
+								textDecoration: "none",
+								transform: "scale(1.05)",
+							}}
+							_focus={{ outline: "none", boxShadow: "none" }}
+							_focusVisible={{ outline: "none", boxShadow: "none" }}
+							target={link.title === "Web Projects" ? undefined : "_blank"}
+							rel="noopener noreferrer"
 						>
 							<HStack gap="4">
-								<link.icon size="24" color={link.color} />
+								<Icon size="24" color={link.color} />
+
 								<Text color="gray" fontSize="text-md" fontWeight="bold">
 									{link.title}
 								</Text>
 							</HStack>
+
 							<Text
 								color="grayLight.300"
 								border="1px solid"
