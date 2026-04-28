@@ -77,3 +77,52 @@ export const social: LinksType[] = [
 		href: "https://discord.com/users/1497129230109118525",
 	},
 ];
+
+export const projects = [
+	{
+		title: "AllStore ERP System",
+		description: "ERP system for managing inventory and sales operations.",
+		color: "#818CF8",
+		name: "system",
+		href: "https://allstoreerp.netlify.app/",
+		bgColor: "rgba(99, 102, 241, 0.12)",
+		icon: "system",
+	},
+	{
+		title: "Interactive Quiz Platform",
+		description:
+			"Quiz app with real-time scoring and category-based questions.",
+		color: "#FACC15",
+		name: "quiz",
+		href: "https://mockquizapp.netlify.app/",
+		bgColor: "rgba(234, 179, 8, 0.12)",
+		icon: "quiz",
+	},
+	{
+		title: "Weather Forecast App",
+		description: "App for checking real-time weather by location.",
+		color: "#38BDF8",
+		name: "weather",
+		href: "https://weatherappproje.netlify.app/",
+		bgColor: "rgba(56, 189, 248, 0.12)",
+		icon: "weather",
+	},
+	{
+		title: "Complaint Management Platform",
+		description: "Platform for users to submit and track complaints.",
+		color: "#F87171",
+		name: "report",
+		href: "https://sikayet.az/",
+		bgColor: "rgba(239, 68, 68, 0.12)",
+		icon: "report",
+	},
+	{
+		title: "Car Rental Website",
+		description: "Modern car rental website with responsive design.",
+		color: "#34D399",
+		name: "rent",
+		href: "https://brandbestcar.netlify.app/",
+		bgColor: "rgba(16, 185, 129, 0.12)",
+		icon: "rent",
+	},
+];
