@@ -53,16 +53,5 @@
 	"typescript.preferences.quoteStyle": "single",
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"workbench.editor.empty.hint": "hidden",
-	"workbench.editor.wrapTabs": true,
-	"cSpell.words": [
-		"chakra",
-		"htmx",
-		"megavistaworld",
-		"nailnuri",
-		"nailnuricv",
-		"nnuri",
-		"nuri",
-		"nurinail",
-		"nurinailqaqa"
-	]
+	"workbench.editor.wrapTabs": true
 }

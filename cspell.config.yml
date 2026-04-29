@@ -1,0 +1,8 @@
+dictionaryDefinitions:
+  - name: projectDictionary
+    path: ./dict.proj.txt
+    addWords: true
+dictionaries:
+  - projectDictionary
+ignorePaths:
+  - "node_modules"
