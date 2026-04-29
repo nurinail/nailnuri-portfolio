@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	Box,
 	Button,
 	HStack,
 	Link,
@@ -92,7 +93,12 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							rel="noopener noreferrer"
 						>
 							<HStack gap="4">
-								<Icon size="24" color={link.color} />
+								<Box
+									transition="all 0.4s ease-in-out"
+									_groupHover={{ transform: "rotate(-15deg)" }}
+								>
+									<Icon size="24" color={link.color} />
+								</Box>
 
 								<Text color="gray" fontSize="text-md" fontWeight="bold">
 									{link.title}
