@@ -14,6 +14,7 @@ export const code: LinksType[] = [
 		title: "GitHub",
 		name: "@nurinail",
 		href: "https://github.com/nurinail",
+		toaster: false,
 	},
 	{
 		color: "#8B5CF6",
@@ -21,6 +22,7 @@ export const code: LinksType[] = [
 		title: "Web Projects",
 		name: "->",
 		href: "/projects",
+		toaster: false,
 	},
 ];
 
@@ -31,6 +33,7 @@ export const contact: LinksType[] = [
 		title: "LinkedIn",
 		name: "@nurinail",
 		href: "https://www.linkedin.com/in/nailnuri/",
+		toaster: false,
 	},
 	{
 		color: "#EA4335",
@@ -38,6 +41,7 @@ export const contact: LinksType[] = [
 		title: "Email",
 		name: "nurinail2003@gmail.com",
 		href: "mailto:nurinail2003@gmail.com",
+		toaster: false,
 	},
 	{
 		color: "#4F46E5",
@@ -56,6 +60,7 @@ export const social: LinksType[] = [
 		title: "Instagram",
 		name: "@nailnuri03",
 		href: "https://www.instagram.com/nailnuri03/",
+		toaster: false,
 	},
 	{
 		color: "#1877F2",
@@ -63,6 +68,7 @@ export const social: LinksType[] = [
 		title: "Facebook",
 		name: "@Nail Nuri",
 		href: "https://www.facebook.com/nail.nuri.505/",
+		toaster: false,
 	},
 	{
 		color: "#FF0000",
@@ -70,6 +76,7 @@ export const social: LinksType[] = [
 		title: "YouTube",
 		name: "@megavistaworld",
 		href: "https://www.youtube.com/@megavistaworld",
+		toaster: false,
 	},
 	{
 		color: "#5865F2",
@@ -77,6 +84,7 @@ export const social: LinksType[] = [
 		title: "Discord",
 		name: "@nnuri03",
 		href: "https://discord.com/users/1497129230109118525",
+		toaster: false,
 	},
 ];
 
