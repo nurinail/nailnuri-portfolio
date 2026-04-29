@@ -13,7 +13,7 @@ import {
 import { virtualColors } from "./virtualColors";
 
 export const themeConfig = defineConfig({
-	cssVarsPrefix: "iktex",
+	cssVarsPrefix: "nnuri",
 	globalCss,
 	theme: {
 		// recipes: { button: buttonRecipe, heading: headingRecipe },

@@ -4,7 +4,7 @@ export const headingRecipe = defineRecipe({
 	base: {
 		fontFamily: "heading",
 	},
-	className: "iktex-heading",
+	className: "nnuri-heading",
 	defaultVariants: {
 		size: "md",
 		weight: "semibold",

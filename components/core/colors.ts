@@ -159,7 +159,7 @@ const grayWarm = {
 	950: { value: "#171412" },
 };
 
-// Default gray uses modern palette (matches Figma "gray modern" for iktex design system)
+// Default gray uses modern palette (matches Figma "gray modern" for nnuri design system)
 const gray = grayModern;
 
 // ============================================================================
@@ -455,8 +455,8 @@ export const colors = {
 	blueLight,
 	brandPurple,
 
-	// Semantic color aliases (matching iktex-ui design tokens)
-	brand: blueDark, // Primary brand color (iktex uses "blue dark" for brand)
+	// Semantic color aliases (matching Nail-ui design tokens)
+	brand: blueDark, // Primary brand color (Nail uses "blue dark" for brand)
 	cyan,
 	error: red, // Error/destructive color
 
