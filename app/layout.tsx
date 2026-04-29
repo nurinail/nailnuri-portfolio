@@ -35,6 +35,7 @@ export default function RootLayout({
 		<html lang="az" suppressHydrationWarning>
 			<body>
 				<Provider>{children}</Provider>
+
 				{/* Google Analytics */}
 				<Script
 					src="https://www.googletagmanager.com/gtag/js?id=G-GN09649BE0"

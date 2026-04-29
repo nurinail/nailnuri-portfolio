@@ -4,6 +4,7 @@ export interface LinksType {
 	title: string;
 	name: string;
 	href?: string;
+	toaster?: boolean;
 }
 
 export const code: LinksType[] = [
@@ -43,7 +44,8 @@ export const contact: LinksType[] = [
 		icon: "cv",
 		title: "CV",
 		name: "@nailnuri",
-		href: "/nailnuricv.pdf",
+		href: "#",
+		toaster: true,
 	},
 ];
 

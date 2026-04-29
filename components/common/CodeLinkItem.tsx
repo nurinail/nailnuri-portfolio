@@ -1,6 +1,13 @@
 "use client";
 
-import { HStack, Link, Separator, Text, VStack } from "@chakra-ui/react";
+import {
+	Button,
+	HStack,
+	Link,
+	Separator,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaFacebook, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa6";
@@ -8,6 +15,7 @@ import { GrGithub, GrInstagram } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
 import { SiHtmx } from "react-icons/si";
 import { TbFileCvFilled } from "react-icons/tb";
+import { Toaster, toaster } from "../ui/toaster";
 import type { LinksType } from "../utils/utils";
 
 const iconMap = {
@@ -30,6 +38,7 @@ interface CodeLinkItemProps {
 export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 	return (
 		<VStack gap="4" w="full" mt="10">
+			<Toaster />
 			<HStack w="full" align="center" gap="4">
 				<Separator flex="1" borderColor="whiteAlpha.300" />
 
@@ -49,10 +58,9 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 			<VStack w="full">
 				{item?.map((link, index) => {
 					const Icon = iconMap[link.icon as keyof typeof iconMap] ?? GrGithub;
-
 					return (
 						<Link
-							as={NextLink}
+							as={link.toaster ? Button : NextLink}
 							href={link.href ?? "#"}
 							key={index as number}
 							transition="all 0.4s ease-in-out"
@@ -62,6 +70,15 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							className="group"
 							role="group"
 							border="1px solid"
+							onClick={(e) => {
+								e.preventDefault();
+								toaster.create({
+									title: "👉 Want to see my CV?",
+									description: "Message me, I’ll send it 🙂",
+									duration: 3000,
+									type: "warning",
+								});
+							}}
 							borderColor={link.color}
 							justifyContent="space-between"
 							_hover={{
