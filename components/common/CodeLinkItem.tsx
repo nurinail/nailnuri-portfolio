@@ -70,15 +70,19 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							className="group"
 							role="group"
 							border="1px solid"
-							onClick={(e) => {
-								e.preventDefault();
-								toaster.create({
-									title: "👉 Want to see my CV?",
-									description: "Message me, I’ll send it 🙂",
-									duration: 3000,
-									type: "warning",
-								});
-							}}
+							onClick={
+								link.toaster
+									? (e) => {
+											e.preventDefault();
+											toaster.create({
+												title: "👉 Want to see my CV?",
+												description: "Message me, I’ll send it 🙂",
+												duration: 3000,
+												type: "warning",
+											});
+										}
+									: undefined
+							}
 							borderColor={link.color}
 							justifyContent="space-between"
 							_hover={{
