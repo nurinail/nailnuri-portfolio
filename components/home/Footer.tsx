@@ -19,8 +19,8 @@ export function Footer() {
 	return (
 		<Box
 			as="footer"
-			py={{ base: "12", md: "16" }}
-			px={{ base: "6", md: "12" }}
+			py={{ base: "8", md: "12" }}
+			px={{ base: "4", md: "8", lg: "12" }}
 			position="relative"
 		>
 			{/* Top border glow */}
@@ -29,21 +29,21 @@ export function Footer() {
 				top="0"
 				left="50%"
 				transform="translateX(-50%)"
-				w="40%"
+				w="35%"
 				h="1px"
-				bg="linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent)"
+				bg="linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.25), transparent)"
 			/>
 
-			<VStack maxW="4xl" mx="auto" gap="8">
+			<VStack maxW="4xl" mx="auto" gap={{ base: "5", md: "6" }}>
 				{/* Logo/Name */}
 				<MotionBox
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5 }}
+					transition={{ duration: 0.4 }}
 				>
 					<Text
-						fontSize="2xl"
+						fontSize={{ base: "lg", md: "xl" }}
 						fontWeight="bold"
 						bgGradient="linear(135deg, #A78BFA, #8B5CF6)"
 						bgClip="text"
@@ -54,32 +54,35 @@ export function Footer() {
 
 				{/* Social icons */}
 				<MotionBox
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5, delay: 0.1 }}
+					transition={{ duration: 0.4, delay: 0.05 }}
 				>
-					<HStack gap="4">
+					<HStack gap="3">
 						{socialLinks.map((social, index) => {
 							const Icon = social.icon;
 							return (
 								<Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
 									<Box
-										p="3"
-										borderRadius="lg"
-										bg="rgba(255, 255, 255, 0.05)"
+										p="2"
+										borderRadius="md"
+										bg="rgba(255, 255, 255, 0.04)"
 										border="1px solid"
-										borderColor="rgba(255, 255, 255, 0.08)"
-										transition="all 0.3s ease"
+										borderColor="rgba(255, 255, 255, 0.06)"
+										transition="all 0.25s ease"
 										cursor="pointer"
 										_hover={{
-											bg: "rgba(139, 92, 246, 0.1)",
-											borderColor: "rgba(139, 92, 246, 0.3)",
-											transform: "translateY(-2px)",
+											bg: "rgba(139, 92, 246, 0.08)",
+											borderColor: "rgba(139, 92, 246, 0.25)",
+											transform: "translateY(-1px)",
+										}}
+										_active={{
+											transform: "scale(0.95)",
 										}}
 										aria-label={social.label}
 									>
-										<Icon size={18} color="#A0A0C0" />
+										<Icon size={16} color="#9090B0" />
 									</Box>
 								</Link>
 							);
@@ -92,9 +95,9 @@ export function Footer() {
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5, delay: 0.2 }}
+					transition={{ duration: 0.4, delay: 0.1 }}
 				>
-					<Text fontSize="sm" color="gray.500" textAlign="center">
+					<Text fontSize="2xs" color="gray.500" textAlign="center">
 						&copy; {new Date().getFullYear()} Nail Nuri. Crafted with care.
 					</Text>
 				</MotionBox>

@@ -30,17 +30,17 @@ const containerVariants = {
 	visible: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.1,
+			staggerChildren: 0.08,
 		},
 	},
 };
 
 const itemVariants = {
-	hidden: { opacity: 0, y: 30 },
+	hidden: { opacity: 0, y: 20 },
 	visible: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.5, ease: "easeOut" },
+		transition: { duration: 0.4, ease: "easeOut" },
 	},
 };
 
@@ -49,8 +49,8 @@ export function ProjectsSection() {
 		<Box
 			as="section"
 			id="projects"
-			py={{ base: "24", md: "32" }}
-			px={{ base: "6", md: "12" }}
+			py={{ base: "12", md: "20", lg: "24" }}
+			px={{ base: "4", md: "8", lg: "12" }}
 			position="relative"
 		>
 			{/* Section glow */}
@@ -59,22 +59,22 @@ export function ProjectsSection() {
 				top="0"
 				left="50%"
 				transform="translateX(-50%)"
-				w="80%"
+				w="70%"
 				h="1px"
-				bg="linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent)"
+				bg="linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent)"
 			/>
 
-			<VStack maxW="6xl" mx="auto" gap={{ base: "12", md: "16" }}>
-				{/* Section header */}
-				<VStack gap="4" textAlign="center">
+			<VStack maxW="6xl" mx="auto" gap={{ base: "8", md: "12" }}>
+				{/* Section header - compact */}
+				<VStack gap={{ base: "2", md: "3" }} textAlign="center">
 					<MotionBox
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 15 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.5 }}
+						transition={{ duration: 0.4 }}
 					>
 						<Text
-							fontSize="sm"
+							fontSize="xs"
 							color="#8B5CF6"
 							fontWeight="semibold"
 							letterSpacing="wider"
@@ -84,13 +84,13 @@ export function ProjectsSection() {
 						</Text>
 					</MotionBox>
 					<MotionBox
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 15 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.5, delay: 0.1 }}
+						transition={{ duration: 0.4, delay: 0.05 }}
 					>
 						<Text
-							fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+							fontSize={{ base: "xl", md: "3xl", lg: "4xl" }}
 							fontWeight="bold"
 							color="white"
 						>
@@ -98,30 +98,31 @@ export function ProjectsSection() {
 						</Text>
 					</MotionBox>
 					<MotionBox
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 15 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.5, delay: 0.2 }}
+						transition={{ duration: 0.4, delay: 0.1 }}
 					>
 						<Text
-							fontSize={{ base: "md", md: "lg" }}
+							fontSize={{ base: "xs", md: "sm" }}
 							color="gray.400"
-							maxW="lg"
+							maxW="md"
+							px={{ base: "2", md: "0" }}
 						>
 							A selection of projects showcasing my expertise in building modern web applications.
 						</Text>
 					</MotionBox>
 				</VStack>
 
-				{/* Projects grid */}
+				{/* Projects grid - optimized for mobile */}
 				<MotionBox
 					as={Grid}
 					variants={containerVariants}
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
-					gap="6"
+					gridTemplateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+					gap={{ base: "3", md: "4" }}
 					w="full"
 				>
 					{projects.map((project, index) => {
@@ -130,42 +131,43 @@ export function ProjectsSection() {
 							<MotionBox
 								key={index}
 								variants={itemVariants}
-								whileHover={{ y: -8, scale: 1.02 }}
-								transition={{ duration: 0.3 }}
+								whileHover={{ y: -4, scale: 1.01 }}
+								whileTap={{ scale: 0.98 }}
+								transition={{ duration: 0.25 }}
 							>
 								<Link href={project.href} target="_blank" rel="noopener noreferrer">
 									<Box
 										position="relative"
-										p="6"
-										borderRadius="2xl"
-										bg="rgba(23, 23, 26, 0.6)"
-										backdropFilter="blur(20px)"
+										p={{ base: "4", md: "5" }}
+										borderRadius="xl"
+										bg="rgba(23, 23, 26, 0.5)"
+										backdropFilter="blur(16px)"
 										border="1px solid"
-										borderColor="rgba(255, 255, 255, 0.06)"
+										borderColor="rgba(255, 255, 255, 0.05)"
 										overflow="hidden"
 										cursor="pointer"
-										transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+										transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
 										role="group"
 										h="full"
-										minH="200px"
+										minH={{ base: "140px", md: "160px" }}
 										display="flex"
 										flexDirection="column"
 										_before={{
 											content: '""',
 											position: "absolute",
 											inset: "-1px",
-											borderRadius: "2xl",
+											borderRadius: "xl",
 											padding: "1px",
-											background: `linear-gradient(135deg, ${project.color}60, transparent 50%, ${project.color}30)`,
+											background: `linear-gradient(135deg, ${project.color}50, transparent 50%, ${project.color}25)`,
 											WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
 											WebkitMaskComposite: "xor",
 											maskComposite: "exclude",
 											opacity: 0,
-											transition: "opacity 0.4s ease",
+											transition: "opacity 0.3s ease",
 										}}
 										_hover={{
 											borderColor: project.color,
-											boxShadow: `0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px ${project.color}20`,
+											boxShadow: `0 12px 40px rgba(0, 0, 0, 0.35), 0 0 40px ${project.color}15`,
 											_before: { opacity: 1 },
 										}}
 									>
@@ -176,68 +178,69 @@ export function ProjectsSection() {
 											left="-50%"
 											w="200%"
 											h="200%"
-											bg={`radial-gradient(circle at center, ${project.color}08 0%, transparent 50%)`}
+											bg={`radial-gradient(circle at center, ${project.color}06 0%, transparent 50%)`}
 											opacity={0}
-											transition="opacity 0.4s ease"
+											transition="opacity 0.3s ease"
 											_groupHover={{ opacity: 1 }}
 											pointerEvents="none"
 										/>
 
 										{/* Icon and arrow */}
-										<HStack justifyContent="space-between" mb="4">
+										<HStack justifyContent="space-between" mb={{ base: "2", md: "3" }}>
 											<Box
-												p="3"
-												borderRadius="xl"
+												p={{ base: "2", md: "2.5" }}
+												borderRadius="lg"
 												bg={project.bgColor}
-												transition="all 0.3s ease"
-												_groupHover={{ transform: "rotate(-10deg) scale(1.1)" }}
+												transition="all 0.25s ease"
+												_groupHover={{ transform: "rotate(-8deg) scale(1.05)" }}
 											>
-												<Icon size={24} color={project.color} />
+												<Icon size={18} color={project.color} />
 											</Box>
 											<Box
-												p="2"
-												borderRadius="lg"
-												bg="rgba(255, 255, 255, 0.05)"
+												p="1.5"
+												borderRadius="md"
+												bg="rgba(255, 255, 255, 0.04)"
 												opacity={0}
-												transform="translateX(-10px)"
-												transition="all 0.3s ease"
+												transform="translateX(-8px)"
+												transition="all 0.25s ease"
 												_groupHover={{ opacity: 1, transform: "translateX(0)" }}
 											>
-												<FiArrowUpRight size={18} color="white" />
+												<FiArrowUpRight size={14} color="white" />
 											</Box>
 										</HStack>
 
 										{/* Content */}
-										<VStack alignItems="flex-start" gap="2" flex="1">
+										<VStack alignItems="flex-start" gap="1" flex="1">
 											<Text
-												fontSize="lg"
+												fontSize={{ base: "sm", md: "md" }}
 												fontWeight="semibold"
 												color="white"
-												transition="color 0.3s ease"
+												transition="color 0.25s ease"
 												_groupHover={{ color: project.color }}
 											>
 												{project.title}
 											</Text>
 											<Text
-												fontSize="sm"
+												fontSize={{ base: "xs", md: "sm" }}
 												color="gray.400"
-												lineHeight="relaxed"
+												lineHeight="1.5"
+												noOfLines={2}
 											>
 												{project.description}
 											</Text>
 										</VStack>
 
 										{/* Tag */}
-										<HStack mt="4" pt="4" borderTop="1px solid" borderColor="rgba(255, 255, 255, 0.05)">
+										<HStack mt={{ base: "2", md: "3" }} pt={{ base: "2", md: "3" }} borderTop="1px solid" borderColor="rgba(255, 255, 255, 0.04)">
 											<Box
-												px="3"
-												py="1"
+												px="2"
+												py="0.5"
 												borderRadius="full"
-												bg={`${project.color}15`}
+												bg={`${project.color}12`}
 												border="1px solid"
-												borderColor={`${project.color}30`}
+												borderColor={`${project.color}25`}
 											>
-												<Text fontSize="xs" fontWeight="medium" color={project.color}>
+												<Text fontSize="2xs" fontWeight="medium" color={project.color}>
 													{project.name}
 												</Text>
 											</Box>
@@ -249,34 +252,37 @@ export function ProjectsSection() {
 					})}
 				</MotionBox>
 
-				{/* View all link */}
+				{/* View all link - compact */}
 				<MotionBox
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5, delay: 0.3 }}
+					transition={{ duration: 0.4, delay: 0.2 }}
 				>
 					<Link href="/projects">
 						<HStack
-							gap="2"
-							px="6"
-							py="3"
+							gap="1.5"
+							px={{ base: "4", md: "5" }}
+							py={{ base: "2", md: "2.5" }}
 							borderRadius="full"
 							border="1px solid"
-							borderColor="rgba(139, 92, 246, 0.3)"
-							bg="rgba(139, 92, 246, 0.05)"
-							transition="all 0.3s ease"
+							borderColor="rgba(139, 92, 246, 0.25)"
+							bg="rgba(139, 92, 246, 0.04)"
+							transition="all 0.25s ease"
 							cursor="pointer"
 							_hover={{
-								bg: "rgba(139, 92, 246, 0.1)",
+								bg: "rgba(139, 92, 246, 0.08)",
 								borderColor: "#8B5CF6",
-								transform: "translateY(-2px)",
+								transform: "translateY(-1px)",
+							}}
+							_active={{
+								transform: "scale(0.97)",
 							}}
 						>
-							<Text color="white" fontWeight="medium">
+							<Text color="white" fontWeight="medium" fontSize={{ base: "xs", md: "sm" }}>
 								View All Projects
 							</Text>
-							<FiArrowUpRight color="white" />
+							<FiArrowUpRight size={14} color="white" />
 						</HStack>
 					</Link>
 				</MotionBox>

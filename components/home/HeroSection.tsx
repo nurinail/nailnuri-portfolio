@@ -14,28 +14,29 @@ export function HeroSection() {
 		<Box
 			as="section"
 			position="relative"
-			minH="100vh"
+			minH={{ base: "auto", md: "100vh" }}
+			py={{ base: "20", md: "0" }}
 			display="flex"
 			alignItems="center"
 			justifyContent="center"
 			overflow="hidden"
-			px={{ base: "6", md: "12" }}
+			px={{ base: "4", md: "8", lg: "12" }}
 		>
 			<Toaster />
-			{/* Animated gradient orbs */}
+			{/* Animated gradient orbs - smaller on mobile */}
 			<MotionBox
 				position="absolute"
-				top="-20%"
-				left="-10%"
-				w={{ base: "400px", md: "600px" }}
-				h={{ base: "400px", md: "600px" }}
+				top="-15%"
+				left="-15%"
+				w={{ base: "250px", md: "450px", lg: "600px" }}
+				h={{ base: "250px", md: "450px", lg: "600px" }}
 				borderRadius="full"
-				bg="radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%)"
-				filter="blur(60px)"
+				bg="radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)"
+				filter="blur(50px)"
 				animate={{
-					x: [0, 50, 0],
-					y: [0, 30, 0],
-					scale: [1, 1.1, 1],
+					x: [0, 30, 0],
+					y: [0, 20, 0],
+					scale: [1, 1.05, 1],
 				}}
 				transition={{
 					duration: 8,
@@ -46,16 +47,16 @@ export function HeroSection() {
 			<MotionBox
 				position="absolute"
 				bottom="-10%"
-				right="-5%"
-				w={{ base: "350px", md: "500px" }}
-				h={{ base: "350px", md: "500px" }}
+				right="-10%"
+				w={{ base: "200px", md: "350px", lg: "500px" }}
+				h={{ base: "200px", md: "350px", lg: "500px" }}
 				borderRadius="full"
-				bg="radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, transparent 70%)"
-				filter="blur(60px)"
+				bg="radial-gradient(circle, rgba(34, 211, 238, 0.15) 0%, transparent 70%)"
+				filter="blur(50px)"
 				animate={{
-					x: [0, -40, 0],
-					y: [0, -50, 0],
-					scale: [1, 1.15, 1],
+					x: [0, -25, 0],
+					y: [0, -30, 0],
+					scale: [1, 1.1, 1],
 				}}
 				transition={{
 					duration: 10,
@@ -65,16 +66,17 @@ export function HeroSection() {
 			/>
 			<MotionBox
 				position="absolute"
-				top="40%"
-				right="20%"
-				w="300px"
-				h="300px"
+				top="50%"
+				right="15%"
+				w={{ base: "150px", md: "250px" }}
+				h={{ base: "150px", md: "250px" }}
 				borderRadius="full"
-				bg="radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%)"
-				filter="blur(80px)"
+				bg="radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, transparent 70%)"
+				filter="blur(60px)"
+				display={{ base: "none", md: "block" }}
 				animate={{
-					x: [0, 30, -20, 0],
-					y: [0, -30, 20, 0],
+					x: [0, 20, -15, 0],
+					y: [0, -20, 15, 0],
 				}}
 				transition={{
 					duration: 12,
@@ -87,40 +89,40 @@ export function HeroSection() {
 			<VStack
 				position="relative"
 				zIndex={10}
-				gap={{ base: "8", md: "10" }}
+				gap={{ base: "5", md: "8" }}
 				textAlign="center"
 				maxW="4xl"
 			>
 				{/* Status badge */}
 				<MotionBox
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
+					transition={{ duration: 0.5 }}
 				>
 					<HStack
-						px="4"
-						py="2"
+						px="3"
+						py="1.5"
 						borderRadius="full"
 						bg="rgba(139, 92, 246, 0.1)"
-						border="1px solid rgba(139, 92, 246, 0.3)"
-						backdropFilter="blur(10px)"
+						border="1px solid rgba(139, 92, 246, 0.25)"
+						backdropFilter="blur(8px)"
 					>
-						<Box w="2" h="2" borderRadius="full" bg="#22C55E" />
-						<Text color="gray.300" fontSize="sm" fontWeight="medium">
-							Available for new projects
+						<Box w="1.5" h="1.5" borderRadius="full" bg="#22C55E" />
+						<Text color="gray.300" fontSize="xs" fontWeight="medium">
+							Available for projects
 						</Text>
 					</HStack>
 				</MotionBox>
 
 				{/* Main headline */}
-				<VStack gap="4">
+				<VStack gap={{ base: "2", md: "3" }}>
 					<MotionText
-						initial={{ opacity: 0, y: 30 }}
+						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.1 }}
-						fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
+						transition={{ duration: 0.6, delay: 0.1 }}
+						fontSize={{ base: "2xl", sm: "3xl", md: "5xl", lg: "6xl" }}
 						fontWeight="bold"
-						lineHeight="1.1"
+						lineHeight="1.15"
 						color="white"
 					>
 						{"Hi, I'm "}
@@ -134,12 +136,12 @@ export function HeroSection() {
 						</Box>
 					</MotionText>
 					<MotionText
-						initial={{ opacity: 0, y: 30 }}
+						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.2 }}
-						fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
+						transition={{ duration: 0.6, delay: 0.15 }}
+						fontSize={{ base: "xl", sm: "2xl", md: "4xl", lg: "5xl" }}
 						fontWeight="bold"
-						lineHeight="1.1"
+						lineHeight="1.15"
 						color="white"
 					>
 						Frontend Developer
@@ -148,54 +150,56 @@ export function HeroSection() {
 
 				{/* Subtitle */}
 				<MotionText
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					fontSize={{ base: "lg", md: "xl" }}
+					transition={{ duration: 0.5, delay: 0.2 }}
+					fontSize={{ base: "sm", md: "lg" }}
 					color="gray.400"
-					maxW="2xl"
-					lineHeight="relaxed"
+					maxW="xl"
+					lineHeight="1.6"
+					px={{ base: "2", md: "0" }}
 				>
 					I craft pixel-perfect, accessible web experiences with React and Next.js.
 					Specializing in modern interfaces that blend performance with elegance.
 				</MotionText>
 
-				{/* CTA Buttons */}
+				{/* CTA Buttons - Compact mobile layout */}
 				<MotionBox
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 15 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.4 }}
+					transition={{ duration: 0.5, delay: 0.25 }}
+					w="full"
 				>
 					<HStack
-						gap="4"
+						gap={{ base: "2", md: "3" }}
 						flexWrap="wrap"
 						justifyContent="center"
 					>
 						<Link href="#projects">
 							<Box
 								as="button"
-								px="8"
-								py="4"
-								borderRadius="xl"
+								px={{ base: "4", md: "6" }}
+								py={{ base: "2.5", md: "3" }}
+								borderRadius="lg"
 								bg="linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)"
 								color="white"
 								fontWeight="semibold"
-								fontSize="md"
+								fontSize={{ base: "xs", md: "sm" }}
 								display="flex"
 								alignItems="center"
-								gap="2"
-								transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-								boxShadow="0 4px 20px rgba(139, 92, 246, 0.4)"
+								gap="1.5"
+								transition="all 0.25s cubic-bezier(0.4, 0, 0.2, 1)"
+								boxShadow="0 4px 15px rgba(139, 92, 246, 0.35)"
 								_hover={{
-									transform: "translateY(-2px) scale(1.02)",
-									boxShadow: "0 8px 30px rgba(139, 92, 246, 0.5)",
+									transform: "translateY(-1px) scale(1.02)",
+									boxShadow: "0 6px 20px rgba(139, 92, 246, 0.45)",
 								}}
 								_active={{
-									transform: "scale(0.98)",
+									transform: "scale(0.97)",
 								}}
 							>
 								View Projects
-								<FiArrowRight />
+								<FiArrowRight size={14} />
 							</Box>
 						</Link>
 
@@ -209,97 +213,98 @@ export function HeroSection() {
 									type: "info",
 								});
 							}}
-							px="8"
-							py="4"
-							borderRadius="xl"
-							bg="rgba(255, 255, 255, 0.05)"
-							border="1px solid rgba(255, 255, 255, 0.1)"
+							px={{ base: "4", md: "6" }}
+							py={{ base: "2.5", md: "3" }}
+							borderRadius="lg"
+							bg="rgba(255, 255, 255, 0.04)"
+							border="1px solid rgba(255, 255, 255, 0.08)"
 							color="white"
 							fontWeight="semibold"
-							fontSize="md"
+							fontSize={{ base: "xs", md: "sm" }}
 							display="flex"
 							alignItems="center"
-							gap="2"
-							backdropFilter="blur(10px)"
-							transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+							gap="1.5"
+							backdropFilter="blur(8px)"
+							transition="all 0.25s cubic-bezier(0.4, 0, 0.2, 1)"
 							_hover={{
-								bg: "rgba(255, 255, 255, 0.1)",
-								borderColor: "rgba(255, 255, 255, 0.2)",
-								transform: "translateY(-2px)",
+								bg: "rgba(255, 255, 255, 0.08)",
+								borderColor: "rgba(255, 255, 255, 0.15)",
+								transform: "translateY(-1px)",
 							}}
 							_active={{
-								transform: "scale(0.98)",
+								transform: "scale(0.97)",
 							}}
 						>
-							<FiDownload />
-							Download CV
+							<FiDownload size={14} />
+							CV
 						</Box>
 
 						<Link href="mailto:nurinail2003@gmail.com">
 							<Box
 								as="button"
-								px="8"
-								py="4"
-								borderRadius="xl"
-								bg="rgba(255, 255, 255, 0.05)"
-								border="1px solid rgba(255, 255, 255, 0.1)"
+								px={{ base: "4", md: "6" }}
+								py={{ base: "2.5", md: "3" }}
+								borderRadius="lg"
+								bg="rgba(255, 255, 255, 0.04)"
+								border="1px solid rgba(255, 255, 255, 0.08)"
 								color="white"
 								fontWeight="semibold"
-								fontSize="md"
+								fontSize={{ base: "xs", md: "sm" }}
 								display="flex"
 								alignItems="center"
-								gap="2"
-								backdropFilter="blur(10px)"
-								transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+								gap="1.5"
+								backdropFilter="blur(8px)"
+								transition="all 0.25s cubic-bezier(0.4, 0, 0.2, 1)"
 								_hover={{
-									bg: "rgba(255, 255, 255, 0.1)",
-									borderColor: "rgba(255, 255, 255, 0.2)",
-									transform: "translateY(-2px)",
+									bg: "rgba(255, 255, 255, 0.08)",
+									borderColor: "rgba(255, 255, 255, 0.15)",
+									transform: "translateY(-1px)",
 								}}
 								_active={{
-									transform: "scale(0.98)",
+									transform: "scale(0.97)",
 								}}
 							>
-								<FiMail />
-								Contact Me
+								<FiMail size={14} />
+								Contact
 							</Box>
 						</Link>
 					</HStack>
 				</MotionBox>
 
-				{/* Scroll indicator */}
+				{/* Scroll indicator - hidden on mobile */}
 				<MotionBox
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ duration: 0.6, delay: 0.8 }}
+					transition={{ duration: 0.5, delay: 0.6 }}
+					display={{ base: "none", md: "block" }}
 					position="absolute"
-					bottom="-120px"
+					bottom={{ md: "-100px" }}
 				>
 					<MotionBox
-						animate={{ y: [0, 8, 0] }}
+						animate={{ y: [0, 6, 0] }}
 						transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
 					>
-						<VStack gap="2">
-							<Text fontSize="xs" color="gray.500" letterSpacing="wider">
-								SCROLL DOWN
+						<VStack gap="1.5">
+							<Text fontSize="2xs" color="gray.500" letterSpacing="wider">
+								SCROLL
 							</Text>
 							<Box
-								w="6"
-								h="10"
+								w="5"
+								h="8"
 								borderRadius="full"
-								border="2px solid"
+								border="1.5px solid"
 								borderColor="gray.600"
 								display="flex"
 								alignItems="flex-start"
 								justifyContent="center"
-								pt="2"
+								pt="1.5"
 							>
 								<MotionBox
-									w="1.5"
-									h="3"
+									w="1"
+									h="2"
 									borderRadius="full"
 									bg="gray.500"
-									animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+									animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
 									transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
 								/>
 							</Box>
