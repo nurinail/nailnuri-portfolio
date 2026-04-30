@@ -1,4 +1,5 @@
 chakra
+daha
 htmx
 megavistaworld
 nailnuri
@@ -6,3 +7,4 @@ nnuri
 nuri
 nurinail
 nurinailqaqa
+sürətli
