@@ -74,11 +74,11 @@ export default function RootLayout({
 				/>
 				<Script id="ga-script" strategy="afterInteractive">
 					{`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GN09649BE0');
-`}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GN09649BE0');
+          `}
 				</Script>
 				<Script
 					id="ld-json"
