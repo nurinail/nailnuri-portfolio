@@ -64,28 +64,49 @@ export function CodeLinkItem({ title, item }: CodeLinkItemProps) {
 							as={link.toaster ? Button : NextLink}
 							href={link.href ?? "#"}
 							key={index as number}
-							transition="all 0.4s ease-in-out"
+							transition="all 0.35s cubic-bezier(0.4, 0, 0.2, 1)"
 							py="2xl"
 							px="3xl"
 							w="full"
 							className="group"
 							role="group"
 							border="1px solid"
+							borderRadius="xl"
 							onClick={(e) => {
 								if (!link.toaster) return;
 								e.preventDefault();
 								toaster.create({
 									title: "👉 Want to see my CV?",
-									description: "Message me, I’ll send it 🙂",
+									description: "Message me, I'll send it 🙂",
 									duration: 3000,
 									type: "warning",
 								});
 							}}
 							borderColor={link.color}
 							justifyContent="space-between"
+							position="relative"
+							bg="rgba(23, 23, 26, 0.6)"
+							backdropFilter="blur(8px)"
+							boxShadow={`0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03)`}
+							_before={{
+								content: '""',
+								position: "absolute",
+								inset: "-1px",
+								borderRadius: "xl",
+								padding: "1px",
+								background: `linear-gradient(135deg, ${link.color}40, transparent 50%, ${link.color}20)`,
+								WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+								WebkitMaskComposite: "xor",
+								maskComposite: "exclude",
+								opacity: 0,
+								transition: "opacity 0.35s ease",
+							}}
 							_hover={{
 								textDecoration: "none",
-								transform: "scale(1.05)",
+								transform: "scale(1.03) translateY(-2px)",
+								boxShadow: `0 8px 30px rgba(0, 0, 0, 0.4), 0 0 40px ${link.color}15`,
+								borderColor: `${link.color}`,
+								_before: { opacity: 1 },
 							}}
 							_focus={{ outline: "none", boxShadow: "none" }}
 							_focusVisible={{ outline: "none", boxShadow: "none" }}
