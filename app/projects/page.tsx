@@ -1,6 +1,7 @@
 "use client";
 import { HStack, Link, Text, VStack } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import {
 	FiAlertCircle,
 	FiCalendar,
@@ -30,9 +31,14 @@ export default function Projects() {
 			mx="auto"
 			w="full"
 		>
-			<Text color="gray.100" fontSize="display-xs" fontWeight="bold">
-				Projects
-			</Text>
+			<HStack>
+				<Link _focus={{ outline: "none" }} as={NextLink} href="..">
+					<FaArrowLeftLong size="24" color="white" />
+				</Link>
+				<Text color="gray.100" fontSize="display-xs" fontWeight="bold">
+					Projects
+				</Text>
+			</HStack>
 			<VStack w="full">
 				{projects.map((project, index) => {
 					const Icon = iconMap[project.icon as keyof typeof iconMap];
