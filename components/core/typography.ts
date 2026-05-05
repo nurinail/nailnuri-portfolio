@@ -1,6 +1,6 @@
 import { defineTextStyles } from "@chakra-ui/react";
 
-export const fontFamily = '"Inter Variable", "Inter", sans-serif';
+export const fontFamily = '"Space Grotesk", sans-serif';
 
 export const fontSizes = {
 	"display-2xl": { description: "Font size is 4.5rem (72px)", value: "4.5rem" },

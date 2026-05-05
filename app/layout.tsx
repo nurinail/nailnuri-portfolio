@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Geist_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { Provider } from "../components/ui/provider";
+import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+	subsets: ["latin"],
+	variable: "--font-space-grotesk",
+	weight: ["300", "400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+	subsets: ["latin"],
+	variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://nurinail.me"),
@@ -63,7 +75,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html
+			lang="en"
+			className={`${spaceGrotesk.variable} ${geistMono.variable}`}
+			suppressHydrationWarning
+		>
 			<body>
 				<Provider>{children}</Provider>
 

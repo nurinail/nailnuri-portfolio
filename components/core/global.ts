@@ -14,10 +14,9 @@ export const globalCss: SystemConfig["globalCss"] = {
 	},
 	"html, body": {
 		flexGrow: 1,
-		fontFamily: '"Inter Variable", Inter, sans-serif !important',
+		fontFamily: 'var(--font-space-grotesk), sans-serif',
 		fontFeatureSettings: "normal",
 		fontSize: "text-md",
-		fontVariationSettings: '"wdth" 75',
 		fontWeight: "400",
 		lineHeight: "text-md",
 	},
